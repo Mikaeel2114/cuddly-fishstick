@@ -1,0 +1,20 @@
+name: BedwarsAC
+main: me.bwac.AntiCheatPlugin
+version: 1.0.0
+author: Mikaeel
+description: Bedwars focused anticheat for 1.8.x
+softdepend: [ProtocolLib, BedWars1058, BedWarsProxy]
+commands:
+  ac:
+    description: AntiCheat main command
+    aliases: [anticheat]
+permissions:
+  anticheat.admin:
+    description: Use all /ac commands
+    default: op
+  anticheat.alerts:
+    description: Receive cheat alerts
+    default: op
+  anticheat.bypass:
+    description: Bypass all checks
+    default: false

@@ -1,0 +1,64 @@
+alerts:
+  enabled: true
+  permission: "anticheat.alerts"
+  notify-ops: true
+  notify-console: true
+  sound: "NOTE_PLING"
+  cooldown-seconds: 3
+  message: "&8[&cAC&8] &f%player% &7failed &c%check% &7(VL &f%vl%&7/&f%max%&7) &8| &7Ping &f%ping% &7TPS &f%tps%"
+  click-teleport: true
+  discord-webhook: ""
+
+general:
+  min-tps: 19.0
+  max-ping-exempt: 400
+  vl-decay-seconds: 60
+  exempt-permission: "anticheat.bypass"
+
+punishments:
+  ladder:
+    offense-1: { type: KICK,    duration: "0" }
+    offense-2: { type: TEMPBAN, duration: "1d" }
+    offense-3: { type: TEMPBAN, duration: "7d" }
+    offense-4: { type: TEMPBAN, duration: "30d" }
+    offense-5: { type: BAN,     duration: "permanent" }
+  reset-offenses-after: "90d"
+  broadcast:
+    enabled: true
+    message: "&c%player% &7was removed for cheating."
+  ban-commands:
+    kick: "kick %player% %reason%"
+    tempban: "tempban %player% %duration% %reason%"
+    ban: "ban %player% %reason%"
+  screen-message:
+    - "&c&lYOU HAVE BEEN BANNED"
+    - "&7Reason: &f%reason%"
+    - "&7Duration: &f%duration%"
+    - "&7Ban ID: &f%id%"
+    - "&7Appeal: &fdiscord.gg/yourserver"
+
+checks:
+  killaura-a: { enabled: true, fov-angle: 90, max-vl: 6, punish: true, reason: "Unfair Advantage (Combat/KillAura)" }
+  killaura-b: { enabled: true, max-vl: 8, punish: true, reason: "Unfair Advantage (Combat/KillAura)" }
+  killaura-c: { enabled: true, max-vl: 8, punish: true, reason: "Unfair Advantage (Combat/Aim)" }
+  reach: { enabled: true, max-reach: 3.05, high-ping-reach: 3.2, max-vl: 6, punish: true, reason: "Unfair Advantage (Combat/Reach)" }
+  autoclicker-a: { enabled: true, max-cps: 20, max-vl: 8, punish: true, reason: "Unfair Advantage (AutoClicker)" }
+  autoclicker-b: { enabled: true, max-vl: 15, punish: false, reason: "AutoClicker (consistency)" }
+  velocity: { enabled: true, min-percent: 0.85, max-vl: 8, punish: true, reason: "Unfair Advantage (Velocity)" }
+  criticals: { enabled: true, max-vl: 6, punish: true, reason: "Unfair Advantage (Criticals)" }
+  speed: { enabled: true, max-vl: 8, punish: true, reason: "Unfair Advantage (Movement/Speed)" }
+  fly: { enabled: true, max-air-ticks: 10, max-vl: 5, punish: true, reason: "Unfair Advantage (Movement/Fly)" }
+  timer: { enabled: true, min-tps: 19.5, max-vl: 8, punish: true, reason: "Unfair Advantage (Timer)" }
+  nofall: { enabled: true, max-vl: 6, punish: true, reason: "Unfair Advantage (NoFall)" }
+  scaffold: { enabled: true, max-vl: 6, punish: true, reason: "Unfair Advantage (Scaffold)" }
+  fastbreak: { enabled: true, max-vl: 6, punish: true, reason: "Unfair Advantage (FastBreak)" }
+  bed-through-wall: { enabled: true, max-vl: 3, punish: true, reason: "Unfair Advantage (Bed Nuker)" }
+  # extra checks (not in the original list). Flag-only by default.
+  noslowdown: { enabled: true, max-vl: 10, punish: false, reason: "Unfair Advantage (NoSlowdown)" }
+  step: { enabled: true, max-vl: 8, punish: false, reason: "Unfair Advantage (Step)" }
+  jesus: { enabled: true, max-vl: 8, punish: false, reason: "Unfair Advantage (Jesus)" }
+
+bedwars:
+  exempt-respawn-ticks: 40
+  exempt-explosion-knockback-ticks: 30
+  exempt-spectators: true
